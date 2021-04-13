@@ -16,7 +16,6 @@ const addTransactionIntoDom = transaction => {
     li.classList.add(CSSClass)
     li.innerHTML = ` ${transaction.name} <span>${operator} R$ ${amountWithoutOperator}</span><button class="delete-btn">x</button>
     `
-    console.log(li)
 
     transactionsUl.prepend(li)
 }
@@ -31,7 +30,10 @@ const income = transactionAmounts
     .filter(value => value > 0)
     .reduce((accumalator, value) => accumalator + value, 0)
     .toFixed(2)
-    const expense = transactionAmounts.filter(value => value < 0)
+const expense = transactionAmounts
+    .filter(value => value < 0)
+    .reduce((accumalator,value) => accumalator + value, 0)
+    .toFixed(2)
     console.log(expense)
 }
 
