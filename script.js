@@ -29,7 +29,7 @@ const updateBalanceValues = () =>{
  const transactionAmounts = dummyTransactions
     .map(transaction => transaction.amount)
 const total = transactionAmounts
-    .reduce((accumulator,transaction) => 3 + transaction, 0)
+    .reduce((accumulator,transaction) => accumulator + transaction, 0)
     .toFixed(2)
 const income = transactionAmounts
     .filter(value => value > 0)
